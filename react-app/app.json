@@ -1,0 +1,9 @@
+{
+  "name": "SocialFlowNativeNew",
+  "displayName": "SocialFlowNativeNew",
+  "expo": {
+    "plugins": ["expo-image-picker"],
+    "name": "SocialFlow",
+    "slug": "socialflow"
+  }
+}

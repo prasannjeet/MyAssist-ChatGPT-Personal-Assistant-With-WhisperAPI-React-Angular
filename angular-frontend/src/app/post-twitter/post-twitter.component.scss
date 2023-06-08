@@ -1,0 +1,52 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,100,300,700');
+
+#image-wrapper {
+  //Background image
+  background-image: url('../assets/twitter/images/twitBack.jpg');
+  background-size: cover;
+}
+
+.dropzone {
+  border: 2px dashed #0087F7;
+  border-radius: 5px;
+  background: white;
+  min-height: 150px;
+  padding: 54px 54px;
+}
+
+.browse-link {
+  //Make bold, change color to blue, add underline
+  font-weight: bold;
+  color: #0087F7 !important;
+  text-decoration: underline !important;
+
+  //Add icon
+  &:before {
+    content: "\f093";
+    font-family: FontAwesome;
+    margin-right: 5px;
+  }
+
+  // Change pointer to hand
+  cursor: pointer;
+}
+
+.tweetImage {
+  object-fit: contain;
+  width: 250px;
+  height: 250px;
+}
+
+.posted-tweet {
+  padding-right: 5px;
+
+  // align center vertically
+  //margin: 0;
+  //position: absolute;
+  //top: 50%;
+  //-ms-transform: translateY(-50%);
+  //transform: translateY(-50%);
+
+
+}

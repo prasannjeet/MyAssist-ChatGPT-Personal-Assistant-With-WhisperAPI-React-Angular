@@ -1,0 +1,15 @@
+[
+  {
+    "city": "San Francisco",
+    "country": "United States",
+    "district": "Union Square",
+    "isoCountryCode": "US",
+    "name": "1 Stockton St",
+    "postalCode": "94108",
+    "region": "CA",
+    "street": "Stockton St",
+    "streetNumber": "1",
+    "subregion": "San Francisco County",
+    "timezone": "America/Los_Angeles"
+  }
+]

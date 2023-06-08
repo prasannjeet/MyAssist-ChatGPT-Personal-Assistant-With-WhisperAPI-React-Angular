@@ -1,0 +1,2 @@
+rm /Users/PRASI/Documents/My_Documents/4ME305_Web_Mobile_Dev/SocialFlowNativeNew/node_modules/expo/android/build.gradle
+mv ./expo-module.build.gradle /Users/PRASI/Documents/My_Documents/4ME305_Web_Mobile_Dev/SocialFlowNativeNew/node_modules/expo/android/build.gradle

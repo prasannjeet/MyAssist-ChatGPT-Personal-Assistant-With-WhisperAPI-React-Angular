@@ -1,0 +1,6 @@
+{
+  "/users": {
+    "target": "https://tweetback.giize.com/",
+    "secure": false
+  }
+}

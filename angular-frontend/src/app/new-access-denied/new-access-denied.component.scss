@@ -1,0 +1,26 @@
+::ng-deep nb-layout-column {
+  justify-content: center;
+  display: flex;
+}
+nb-card {
+  width: 1200px;
+  height: 750px !important;
+}
+.logout-button {
+  // css to ensure button is on the right
+  margin-left: auto;
+}
+
+// css to restrict logo to 50px height
+.logo {
+  height: 50px;
+}
+.card-main {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.card-internal {
+  height: inherit !important;
+  margin-top: 2rem;
+}

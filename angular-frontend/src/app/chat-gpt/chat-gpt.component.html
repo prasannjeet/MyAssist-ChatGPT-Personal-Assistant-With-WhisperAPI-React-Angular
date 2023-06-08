@@ -1,0 +1,43 @@
+<nb-layout>
+  <nb-layout-header fixed>
+    <a href="#" (click)="toggle()"><i class="nb-menu"></i><nb-icon icon="menu-outline"></nb-icon></a>
+    <img class="logo" src="assets/my-assist-logo.png" alt="MyAssist"/>
+    <button
+      *ngIf="isUserLoggedIn|async"
+      nbButton status="danger"
+      class="logout-button"
+      (click)="logout()"
+    >
+      Logout
+    </button>
+    <button
+      *ngIf="!(isUserLoggedIn|async)"
+      nbButton status="assistant"
+      class="logout-button"
+      routerLink="/assistant"
+    >
+      Login
+    </button>
+  </nb-layout-header>
+  <nb-sidebar>
+    <nb-menu [items]="sidebarItems"></nb-menu>
+  </nb-sidebar>
+  <nb-layout-column>
+    <nb-chat class = "chat-main" title="Welcome to your personal assistant" size="large">
+      <nb-chat-message *ngFor="let msg of messages"
+                       [type]="msg.type"
+                       [message]="msg.text"
+                       [reply]="msg.reply"
+                       [sender]="msg.user.name"
+                       [date]="msg.date"
+                       [files]="msg.files"
+                       [quote]="msg.quote"
+                       [latitude]="msg.latitude"
+                       [longitude]="msg.longitude"
+                       [avatar]="msg.user.avatar">
+      </nb-chat-message>
+      <nb-chat-form (send)="sendMessage($event)" [dropFiles]="true">
+      </nb-chat-form>
+    </nb-chat>
+  </nb-layout-column>
+</nb-layout>

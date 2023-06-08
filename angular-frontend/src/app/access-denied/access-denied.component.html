@@ -1,0 +1,54 @@
+<body>
+
+<div class="bg-g1 size1 flex-w flex-col-c-sb p-l-15 p-r-15 p-b-30">
+
+  <div class="flex-col-c w-full p-t-50 p-b-80">
+    <h3 class="l1-txt1 txt-center p-b-10">
+      Social Flow
+    </h3>
+
+    <p class="txt-center l1-txt2 p-b-43 wsize2">
+      Effortlessly share your moments on multiple social media platforms with SocialFlow - the ultimate post-sharing
+      companion.
+    </p>
+
+    <div class="flex-w flex-c-m w-full contact100-form validate-form">
+
+      <button *ngIf="isUserFacebook" routerLink="/instagram" class="green-btn flex-c-m s1-txt4 size3 how-btn trans-04 where1">
+        😃 Post to Instagram
+      </button>
+      <button *ngIf="!isUserFacebook" routerLink="/instagram" class="red-btn flex-c-m s1-txt4 size3 how-btn trans-04 where1">
+        😶 Login for Instagram
+      </button>
+
+      <button *ngIf="isUserTwitter" class="green-btn flex-c-m s1-txt4 size3 how-btn trans-04 where1" routerLink="/twitter">
+        😃 Post to Twitter
+      </button>
+
+      <button *ngIf="!isUserTwitter" class="red-btn flex-c-m s1-txt4 size3 how-btn trans-04 where1" routerLink="/twitter">
+        😶 Login for Twitter
+      </button>
+
+      <button *ngIf="isUserLoggedIn|async" (click)="logout()" class="flex-c-m s1-txt4 size3 how-btn trans-04 where1">
+        Logout
+      </button>
+
+    </div>
+  </div>
+
+  <div style="text-align: center;">
+    <h4 class="l1-txt4 txt-center p-b-10">🚫 Access Denied 🚫</h4>
+    <p class="txt-center l1-txt2 p-b-43 wsize3">
+      Posting a tweet works only if you signed in with Twitter.
+      Posting an Instagram post works only if you signed in with Facebook.
+      Please logout and login with the correct social media platform.
+    </p>
+  </div>
+
+  <span class="s1-txt2 txt-center">
+			Prasannjeet Singh - ps222vt@student.lnu.se
+		</span>
+
+</div>
+
+</body>

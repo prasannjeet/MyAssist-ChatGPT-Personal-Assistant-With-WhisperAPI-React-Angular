@@ -1,0 +1,54 @@
+::ng-deep nb-layout-column {
+  justify-content: center;
+  display: flex;
+}
+nb-card {
+  width: 1200px;
+  height: 750px !important;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.table th:first-child,
+.table td:first-child {
+  width: 70%; /* adjust this value to make the name column wider or narrower */
+}
+
+.table th:last-child,
+.table td:last-child {
+  width: 30%; /* adjust this value to make the toggle column narrower or wider */
+  text-align: center;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  margin-left: 10px;
+}
+
+.logout-button {
+  // css to ensure button is on the right
+  margin-left: auto;
+}
+
+// css to restrict logo to 50px height
+.logo {
+  height: 50px;
+}
+
+.card-main {
+  height: 100% !important;
+  width: 100% !important;
+}

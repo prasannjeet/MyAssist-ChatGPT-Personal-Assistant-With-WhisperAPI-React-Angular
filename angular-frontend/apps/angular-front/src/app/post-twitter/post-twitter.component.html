@@ -1,0 +1,125 @@
+<body>
+  <!--<button mat-raised-button (click)="openDialog('500ms', '1500ms')">Open dialog slowly</button>-->
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 text-center mb-5">
+          <h2 class="heading-section">Post to Twitter</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div id="image-wrapper">
+            <div class="row">
+              <div class="col-md-9 col-lg-7">
+                <div class="contact-wrap w-100 p-md-5 p-4">
+                  <h3 class="mb-4"></h3>
+                  <div id="form-message-warning" class="mb-4"></div>
+                  <div id="form-message-success" class="mb-4">
+                    Your message was sent, thank you!
+                  </div>
+                  <form
+                    method="POST"
+                    id="contactForm"
+                    name="contactForm"
+                    class="contactForm"
+                  >
+                    <div class="row">
+                      <div *ngIf="productImages.length === 0" class="col-md-12">
+                        <div
+                          class="form-group dropzone"
+                          appDrag
+                          (files)="fileDropped($event)"
+                        >
+                          <div class="text-center">
+                            Drag and drop, or
+                            <a class="browse-link" (click)="selectFile.click()"
+                              >browse</a
+                            >
+                            image
+                          </div>
+                        </div>
+                      </div>
+
+                      <div *ngIf="productImages.length !== 0" class="col-md-12">
+                        <div>
+                          <img
+                            class="tweetImage"
+                            [src]="productImages[0].url"
+                            alt="tweet image"
+                          />
+                        </div>
+                      </div>
+                      <input
+                        style="display: none"
+                        type="file"
+                        #selectFile
+                        value="select"
+                        (change)="onFileSelected($event)"
+                      />
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="label" style="background-color: #f2f2f2"
+                            >Add your tweet below! Count:
+                            <span
+                              *ngIf="tweet.length <= 280"
+                              [style]="{ color: 'green' }"
+                              >'{{
+                                this.tweet === '' ? 0 : this.tweet.length
+                              }}'</span
+                            >
+                            <span
+                              *ngIf="tweet.length > 280"
+                              [style]="{ color: 'red' }"
+                              >'{{
+                                this.tweet === '' ? 0 : this.tweet.length
+                              }}'</span
+                            >
+                          </label>
+                          <textarea
+                            [(ngModel)]="tweet"
+                            name="message"
+                            class="form-control"
+                            id="message"
+                            cols="30"
+                            rows="4"
+                            placeholder="Message"
+                          ></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input
+                            type="submit"
+                            value="Tweet!"
+                            class="btn btn-primary"
+                            (click)="doTweet()"
+                          />
+                          <div class="submitting"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div *ngIf="isSentTweet" class="col-md-3 col-lg-5 posted-tweet">
+                <div>
+                  <div class="label" style="background-color: #f2f2f2">
+                    Your Tweet:
+                  </div>
+                  <ngx-tweet tweetId="{{ tweetId }}"></ngx-tweet>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/main.js"></script>
+</body>

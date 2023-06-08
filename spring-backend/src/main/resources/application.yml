@@ -1,0 +1,61 @@
+server:
+  port: ${SERVER_PORT}
+  ssl:
+    certificate: classpath:${CERTIFICATE_FILENAME}
+    certificate-private-key: classpath:${CERTIFICATE_PRIVATE_KEY_FILENAME}
+    enabled: true
+  http:
+    port: ${HTTP_PORT}
+  tomcat:
+    max-swallow-size: 100MB
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: ${MAX_UPLOAD_SIZE}
+      max-request-size: ${MAX_UPLOAD_SIZE}
+  application:
+    name: timetable-oauth
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mariadb://${DB_SOURCE}:${DB_PORT}/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.mariadb.jdbc.Driver
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_SCHEME}://${KEYCLOAK_AUTH_SERVER}:${KEYCLOAK_AUTH_PORT}/realms/${REALM_NAME}
+#          jwk-set-uri: ${KEYCLOAK_AUTH_SERVER}:${KEYCLOAK_AUTH_PORT}/realms/${REALM_NAME}/protocol/openid-connect/certs
+
+log:
+  project: ${LOG_LEVEL:INFO}
+  spring: ${SPRING_LOG_LEVEL:INFO}
+
+timetable-config:
+  keycloakScheme: ${KEYCLOAK_SCHEME}
+  keycloakAuthServer: ${KEYCLOAK_AUTH_SERVER}
+  keycloakAuthPort: ${KEYCLOAK_AUTH_PORT}
+  keycloakRealmName: ${REALM_NAME}
+  keycloakPublicKey: ${KEYCLOAK_PUBLIC_KEY}
+  keycloakClientId: ${KEYCLOAK_CLIENT_ID}
+  keycloakClientSecret: ${KEYCLOAK_CLIENT_SECRET}
+
+social-config:
+  myAccessToken: ${MY_ACCESS_TOKEN}
+  myAccessSecret: ${MY_ACCESS_SECRET}
+  apiKey: ${API_KEY}
+  apiSecret: ${API_SECRET}
+  bearerToken: ${BEARER_TOKEN}
+  clientId: ${CLIENT_ID}
+  clientSecret: ${CLIENT_SECRET}
+  localUploadPath: ${LOCAL_UPLOAD_PATH} #(Include trailing slash) Also update Dockerfile
+  openAiToken: ${OPENAI_TOKEN}
+  adminClientId: ${ADMIN_CLIENT_ID}
+  adminClientSecret: ${ADMIN_CLIENT_SECRET}
+  openAiRoleName: ${OPENAI_ROLE_NAME}
+  openAiRoleId: ${OPENAI_ROLE_ID}

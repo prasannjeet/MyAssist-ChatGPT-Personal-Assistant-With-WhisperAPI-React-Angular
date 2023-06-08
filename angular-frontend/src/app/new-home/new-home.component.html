@@ -1,0 +1,134 @@
+<nb-layout>
+  <nb-layout-header fixed>
+    <a href="#" (click)="toggle()"><i class="nb-menu"></i><nb-icon icon="menu-outline"></nb-icon></a>
+    <img class="logo" src="assets/my-assist-logo.png" alt="MyAssist" />
+    <button
+      *ngIf="isUserLoggedIn|async"
+      nbButton status="danger"
+      class="logout-button"
+      (click)="logout()"
+    >
+      Logout
+    </button>
+    <button
+      *ngIf="!(isUserLoggedIn|async)"
+      nbButton status="assistant"
+      class="logout-button"
+      routerLink="/assistant"
+    >
+      Login
+    </button>
+  </nb-layout-header>
+  <nb-sidebar>
+    <nb-menu [items]="sidebarItems"></nb-menu>
+  </nb-sidebar>
+  <nb-layout-column>
+    <nb-card class="card-main" accent="primary" status="warning">
+        <nb-card-front>
+          <nb-card class="card-main">
+            <nb-card-header>
+              Welcome to MyAssist
+            </nb-card-header>
+            <nb-card-body>
+              Get natural language processing responses to your queries with our personal assistant app.
+            </nb-card-body>
+          </nb-card>
+        </nb-card-front>
+      <nb-card class="card-main">
+        <nb-card-body>
+          <nb-accordion>
+            <nb-accordion-item>
+              <nb-accordion-item-header>Conversational Tone</nb-accordion-item-header>
+              <nb-accordion-item-body>MyAssist generates human-like responses to answer your questions in a lucid and conversational way.</nb-accordion-item-body>
+            </nb-accordion-item>
+            <nb-accordion-item>
+              <nb-accordion-item-header>Microphone Functionality</nb-accordion-item-header>
+              <nb-accordion-item-body>Instead of typing, you can send voice commands to MyAssist.</nb-accordion-item-body>
+            </nb-accordion-item>
+            <nb-accordion-item>
+              <nb-accordion-item-header>Language Functionality</nb-accordion-item-header>
+              <nb-accordion-item-body>MyAssist can reply to you in different languages if you record commands in that language.</nb-accordion-item-body>
+            </nb-accordion-item>
+            <nb-accordion-item>
+              <nb-accordion-item-header>Chat History</nb-accordion-item-header>
+              <nb-accordion-item-body>MyAssist saves the chat history of each user, allowing you to refer to previous messages in the conversation.</nb-accordion-item-body>
+            </nb-accordion-item>
+            <nb-accordion-item>
+              <nb-accordion-item-header>Request Assistant Permissions</nb-accordion-item-header>
+              <nb-accordion-item-body>If you create an account, you'll need to request permission to use the personal assistant app. The admin has the power to approve this request and allow you to log in.</nb-accordion-item-body>
+            </nb-accordion-item>
+            <nb-accordion-item>
+              <nb-accordion-item-header>GPS Integration</nb-accordion-item-header>
+              <nb-accordion-item-body>You can send location-based queries like "suggest some restaurants at my location," and MyAssist will fetch your location from GPS and send the query to the personal assistant.</nb-accordion-item-body>
+            </nb-accordion-item>
+            <nb-accordion-item>
+              <nb-accordion-item-header>Clear Chat History</nb-accordion-item-header>
+              <nb-accordion-item-body>You can send the command "clear the chat," and MyAssist will clear the chat history.</nb-accordion-item-body>
+            </nb-accordion-item>
+          </nb-accordion>
+        </nb-card-body>
+        <nb-card>
+          <nb-card-header>Technology Stack</nb-card-header>
+          <nb-card-body>
+            <nb-accordion>
+              <nb-accordion-item>
+                <nb-accordion-item-header>React Native</nb-accordion-item-header>
+                <nb-accordion-item-body>
+                  Used for mobile client app development
+                </nb-accordion-item-body>
+              </nb-accordion-item>
+            </nb-accordion>
+            <nb-accordion>
+              <nb-accordion-item>
+                <nb-accordion-item-header>Angular</nb-accordion-item-header>
+                <nb-accordion-item-body>
+                  Used for web front-end
+                </nb-accordion-item-body>
+              </nb-accordion-item>
+            </nb-accordion>
+            <nb-accordion>
+              <nb-accordion-item>
+                <nb-accordion-item-header>Spring Framework</nb-accordion-item-header>
+                <nb-accordion-item-body>
+                  Spring Boot is used for the backend. (Java)
+                </nb-accordion-item-body>
+              </nb-accordion-item>
+            </nb-accordion>
+            <nb-accordion>
+              <nb-accordion-item>
+                <nb-accordion-item-header>MySQL</nb-accordion-item-header>
+                <nb-accordion-item-body>
+                  Used for the database
+                </nb-accordion-item-body>
+              </nb-accordion-item>
+            </nb-accordion>
+            <nb-accordion>
+              <nb-accordion-item>
+                <nb-accordion-item-header>Open AI</nb-accordion-item-header>
+                <nb-accordion-item-body>
+                  Used for the API
+                </nb-accordion-item-body>
+              </nb-accordion-item>
+            </nb-accordion>
+            <nb-accordion>
+              <nb-accordion-item>
+                <nb-accordion-item-header>Google API</nb-accordion-item-header>
+                <nb-accordion-item-body>
+                  Google API is used to fetch textual address of the user when we send it the GPS coordinates.
+                </nb-accordion-item-body>
+              </nb-accordion-item>
+            </nb-accordion>
+            <nb-accordion>
+              <nb-accordion-item>
+                <nb-accordion-item-header>Sensors</nb-accordion-item-header>
+                <nb-accordion-item-body>
+                  MyAssist uses sensors such as the microphone and GPS to provide a more personalized and interactive experience.
+                </nb-accordion-item-body>
+              </nb-accordion-item>
+            </nb-accordion>
+          </nb-card-body>
+        </nb-card>
+      </nb-card>
+    </nb-card>
+  </nb-layout-column>
+</nb-layout>

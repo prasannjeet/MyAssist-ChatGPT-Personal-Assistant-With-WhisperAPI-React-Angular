@@ -1,0 +1,25 @@
+<configuration>
+    
+    <springProperty scope="context" name="logLevel" source="log.project"/>
+    <springProperty scope="context" name="springLogLevel" source="log.spring"/>
+
+	<!-- Appender to STDOUT -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<!-- MDC trace can be added : %X{trace} %msg%n -->
+			<Pattern>%d{yyyy-MM-dd ;HH:mm:ss.SSS} [%thread] %-5level %logger{36} : %msg%n</Pattern>
+		</encoder>
+	</appender>
+
+    <!-- The 'level' can be one of DEBUG, INFO, WARN, ERROR, ALL or OFF -->
+    <root>
+        <level value="${springLogLevel}" />
+        <appender-ref ref="STDOUT" />
+    </root>
+	
+	<logger name="com.prasannjeet" additivity="false">
+		<level value="${logLevel}" />
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+</configuration>
